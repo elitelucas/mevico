@@ -70,7 +70,7 @@ export class SuperUpdateComponent implements OnInit {
           this.formData=res;
           this.userId=this.formData._id;
           this.registerForm = this.formBuilder.group({
-            firstName: [this.formData? this.formData.firstName:'', [Validators.required,Validators.pattern("[a-zA-Z ]*"), Validators.maxLength(100)]],
+            firstName: [this.formData? this.formData.firstName:'', [Validators.pattern("[a-zA-Z ]*"), Validators.maxLength(100)]],
             lastName: [this.formData? this.formData.lastName:'', [Validators.required,Validators.pattern("[a-zA-Z ]*"),Validators.maxLength(100)]],
             room: [this.formData? this.formData.room:'', [Validators.required,Validators.pattern("[a-zA-Z ]*"), Validators.maxLength(40)]],
             cmp: [this.formData? this.formData.cmp:'', [Validators.required,Validators.pattern("[0-9]*"), Validators.minLength(4), Validators.maxLength(8)]],
@@ -85,7 +85,7 @@ export class SuperUpdateComponent implements OnInit {
 
   ngOnInit(): void {
     this.registerForm = this.formBuilder.group({
-      firstName: [this.formData? this.formData.firstName:'', [Validators.required,Validators.pattern("[a-zA-Z ]*"), Validators.maxLength(100)]],
+      firstName: [this.formData? this.formData.firstName:'', [Validators.pattern("[a-zA-Z ]*"), Validators.maxLength(100)]],
       lastName: [this.formData? this.formData.lastName:'', [Validators.required,Validators.pattern("[a-zA-Z ]*"),Validators.maxLength(100)]],
       room: [this.formData? this.formData.room:'', [Validators.required,Validators.pattern("[a-zA-Z ]*"), Validators.maxLength(40)]],
       cmp: [this.formData? this.formData.cmp:'', [Validators.required,Validators.pattern("[0-9]*"), Validators.minLength(4), Validators.maxLength(8)]],

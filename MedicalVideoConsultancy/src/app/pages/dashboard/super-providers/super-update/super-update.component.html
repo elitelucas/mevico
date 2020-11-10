@@ -11,7 +11,6 @@
                             <input class="form-control" formControla="firstName" placeholder="First Name"
                                 [ngClass]="{ 'is-invalid': submitted && f.firstName.errors }">
                             <div *ngIf="submitted && f.firstName.errors" class="invalid-feedback">
-                                <div *ngIf="f.firstName.errors.required">First Name is required</div>
                                 <div *ngIf="f.firstName.errors.pattern">First Name must be alphabetic</div>
                             </div>
                         </div>
