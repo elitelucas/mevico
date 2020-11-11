@@ -23,7 +23,22 @@
   
     background-image: url("./../../../../../assets/images/barra.png");
     background-size: cover;
-    height:100vh;
 
 
+}
+.sidebar-list{
+  background-color:white;
+  margin-bottom:10px;
+  border-radius: 8px 0 0 8px;
+  margin-bottom:17px;
+  margin-left:20px
+}
+.top-margin{
+  margin-top:6px;
+}
+.h4-color{
+  color:white;
+}
+.img-height{
+  height:38px;
 }

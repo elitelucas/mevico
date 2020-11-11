@@ -233,7 +233,28 @@ export class AppSidebarComponent implements OnInit, OnDestroy {
     var now = (window.performance.now() / 1000).toFixed(3);
     //console.log(now + ': ', arg);
   }
+  onVisibleChange($event) {
+    console.log($event.checked);
+    if($event.checked)
+    this.publicMe();
+    else
+    this.privateMe();
+}
+onActiveChange($event) {
+  console.log($event.checked);
+  if($event.checked)
+  this.active();
+  else
+  this.desactive();
+}
 
+onAlarmChange($event) {
+  console.log($event.checked);
+  if($event.checked)
+  this.alarmActive();
+  else
+  this.alarmInactive();
+}
 
 
   /*
