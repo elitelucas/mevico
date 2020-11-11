@@ -37,7 +37,8 @@ export class AppSidebarComponent implements OnInit, OnDestroy {
   currentUser: any;
   currentUserRole: string = '';
 
-  waitingPatientsData: Patient[];
+  // waitingPatientsData: Patient[];
+   waitingPatientsData=[];
 
   provider_connect = 'OK';
   provider_connect_active = 'active';
@@ -116,7 +117,12 @@ export class AppSidebarComponent implements OnInit, OnDestroy {
     if (this.providerRoleOptionsShow && this.currentUser.payToDay) {
       this.confirmConnect();
       this.waitingPatientsData = [];
-      this.listWaitingPatient();
+
+      this.waitingPatientsData = [
+       {fullName:'aaaaaaaa', dni:'sdfsdfdf'},
+       {fullName:'sssss', dni:'wwwwwwwww'},
+     ]
+      // this.listWaitingPatient();
     }
   }
 
@@ -171,6 +177,7 @@ export class AppSidebarComponent implements OnInit, OnDestroy {
 
   updateList() {
     this.waitingPatientsData = Array.from(this.patientListMap.values());
+     
   }
 
   async confirmConnect() {

@@ -35,7 +35,7 @@
               <span>visible</span>
             </div>
             <div class="col-4">
-              <mat-slide-toggle (change)="onVisibleChange($event)">Slide me!</mat-slide-toggle>
+              <mat-slide-toggle (change)="onVisibleChange($event)"></mat-slide-toggle>
             </div>
           </div>
           <div class="row mb-2">
@@ -43,7 +43,7 @@
               <span>activar</span>
             </div>
             <div class="col-4">
-              <mat-slide-toggle (change)="onActiveChange($event)">Slide me!</mat-slide-toggle>
+              <mat-slide-toggle (change)="onActiveChange($event)"></mat-slide-toggle>
 
             </div>
           </div>
@@ -52,7 +52,7 @@
               <span>activar alerta</span>
             </div>
             <div class="col-4">
-              <mat-slide-toggle (change)="onAlarmChange($event)">Slide me!</mat-slide-toggle>
+              <mat-slide-toggle (change)="onAlarmChange($event)"></mat-slide-toggle>
 
             </div>
           </div>
@@ -85,22 +85,15 @@
       *ngIf="(currentUserRole !== 'SuperAdmin') && (currentUserRole !== 'Admin') && (currentUserRole !== 'Patient') && currentUser.payToDay">
      
       <div class="pl-4 pt-3 pb-4 d-block">
-<!-- 
+
         <h4 class="h4-color">Pacientes en espera</h4>
         <div>
           <button  mat-raised-button
             class="mr-1 text-dark px-1 py-0 " *ngIf="waitingPatientsData && waitingPatientsData.length" (click)="nextAttetion()" style="background-color: white;">
             <img src="./../../../../../assets/images/P15.svg" style="height:32px" alt="start-call" />
             <span style="color:#047c7f">&nbsp;SIGUIENTE PACIENTE</span></button>
-        </div> -->
-
-        <h4 class="h4-color">Pacientes en espera</h4>
-        <div>
-          <button  mat-raised-button
-            class="mr-1 text-dark px-1 py-0 " (click)="nextAttetion()" style="background-color: white;">
-            <img src="./../../../../../assets/images/P15.svg" style="height:32px" alt="start-call" />
-            <span style="color:#047c7f">&nbsp;SIGUIENTE PACIENTE</span></button>
         </div>
+
 
         <div class="patients-queue">
           <ng-container *ngIf="waitingPatientsData && waitingPatientsData.length">
@@ -109,13 +102,11 @@
               <div class="d-flex justify-content-between align-items-center">
                 <!--img class="profile-image" [src]="initPatientAvatar(patient)" alt="patient-avatar" />-->
                 <div class="mr-1 d-block mt-1">
-                  <div class="text-black-50">
-                    <b class="mr-1 font-bold">Name:</b> {{patient.fullName}} <br>
-                    <b class="mr-1 font-bold">Email:</b> {{patient.email}}
+                  <div class="text-white-50">
+                    <p>{{patient.fullName}}-{{patient.dni}}</p>
                   </div>
                 </div>
               </div>
-              <mat-divider class="mt-1 mb-2 bg-dark"></mat-divider>
             </ng-container>
           </ng-container>
         </div>

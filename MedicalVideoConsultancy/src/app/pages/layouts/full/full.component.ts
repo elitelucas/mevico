@@ -3,10 +3,12 @@ import {
   ChangeDetectorRef,
   Component,
   OnDestroy,
-  AfterViewInit, OnInit
+  AfterViewInit, OnInit,
+  ViewChild
 } from '@angular/core';
 import { AuthService } from '../../../_services/auth.service';
 import { MenuItems } from '../../shared/menu-items/menu-items';
+import { SidebarComponent } from '@syncfusion/ej2-angular-navigations';
 
 /** @title Responsive sidenav */
 @Component({
@@ -19,6 +21,9 @@ export class FullComponent implements OnInit, OnDestroy, AfterViewInit {
   daysEndSubcriptions: Number;
   daysEndFreeUse: Number;
 
+  @ViewChild('sidebar') sidebar: SidebarComponent;
+
+
   private _mobileQueryListener: () => void;
 
   constructor(
@@ -28,7 +33,6 @@ export class FullComponent implements OnInit, OnDestroy, AfterViewInit {
     public menuItems: MenuItems,
   ) {
     this.mobileQuery = media.matchMedia('(min-width: 768px)');
-    this._mobileQueryListener = () => changeDetectorRef.detectChanges();
     this.mobileQuery.addListener(this._mobileQueryListener);
     this.currentUser = this.authService.getCurrentUser;
     console.log("this.currentUser");
@@ -58,6 +62,12 @@ export class FullComponent implements OnInit, OnDestroy, AfterViewInit {
   ngOnDestroy(): void {
     this.mobileQuery.removeListener(this._mobileQueryListener);
   }
+  toggleClick() {
+    this.sidebar.toggle();
+}
+closeClick() {
+    this.sidebar.hide();
+}
   ngAfterViewInit() { }
 
 }

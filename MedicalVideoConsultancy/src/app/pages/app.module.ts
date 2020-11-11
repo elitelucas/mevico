@@ -15,6 +15,8 @@ import { DemoMaterialModule } from './demo-material-module';
 import { SharedModule } from './shared/shared.module';
 import { SpinnerComponent } from './shared/spinner.component';
 import { CKEditorModule } from '@ckeditor/ckeditor5-angular';
+import { SidebarModule } from '@syncfusion/ej2-angular-navigations';
+
 
 import { DefaultComponent } from "./layouts/default/default.component";
 import { ToolbarComponent } from './layouts/default/toolbar/toolbar.component';
@@ -64,6 +66,7 @@ import { FeebackComponent } from './meet-patient/feeback/feeback.component';
     HttpClientModule,
     SharedModule,
     CKEditorModule,
+    SidebarModule,
     RouterModule.forRoot(
       AppRoutes,
       { useHash: true },
