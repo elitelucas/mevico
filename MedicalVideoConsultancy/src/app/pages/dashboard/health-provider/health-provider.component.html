@@ -1,31 +1,66 @@
-<div class="container-fluid text-center mt-5  justify-content-center p-20" >
-  <div class="display-5 mb-5">
+<div class="container-fluid mt-2  justify-content-center p-20">
+
+  <div class="p-2 border-radius-5 w-14 alert-background text-center ml-80">
+    <span class="mr-2 main-color">Video tutorial</span><img src="assets/images/P19.svg"
+     alt="tutorial" class="w-1-5rem mw-100" />
+  </div>
+  
+  <div class="mb-5 mt-3 text-center welcome-div">
     Welcome, dear {{currentUser.role}} {{currentUser.lastName}}
   </div>
 
   <div class="row">
     <div class="user-invite col-xl-12 col-lg-12">
-      <mat-card class="p-3">
-        <mat-card-title class="p-4 font-18 text-black-50">You can invite any patient to your waiting room, share this link:</mat-card-title>
-        <div class=" d-block justify-content-between p-4">
-          <div class="d-flex ">
-            <label>{{domain}}</label><input  #inputRoom class="w-50 p-10 border-radius-5 " type="text" value="{{roomUrl}}" >
-            <button  class="text-white font-bold   copy-invite-url" (click)="copyRoomAddress(inputRoom)">Copy</button>
-            <button  class="text-white font-bold   copy-invite-url" (click)="saveRoomAddress(inputRoom)">Save</button>
-
-            <div class="w-25 mx-5 d-block ">
-              <button mat-stroked-button  class="w-p-180 p-3 text-black font-20" color="primary" [matMenuTriggerFor]="inviteMenu">Invite by <img class="w-25" src="https://img.icons8.com/nolan/48/expand-arrow.png"/></button>
-
-              <mat-menu #inviteMenu="matMenu" class="w-p-180  mt-3" >
-                <button  mat-menu-item class="w-75 mx-auto bg-info   text-white font-20 text-center" (click)="openDialogue('sms')">SMS <img class="w-25" src="https://img.icons8.com/dusk/64/000000/sms.png"/></button>
-                <button  mat-menu-item class="w-75 mx-auto bg-success   text-dark font-20 mt-3 text-center"  [matMenuTriggerFor]="inviteByEmailMenu">Email <img class="w-25" src="https://img.icons8.com/nolan/64/email-open.png"/></button>
-              </mat-menu>
-              <mat-menu #inviteByEmailMenu="matMenu" class="w-p-180" >
-                <button  mat-menu-item class="w-75 mx-auto bg-warning   text-white font-20 " (click)="sendInvite('gmail')">Gmail <img class="w-25" src="https://img.icons8.com/fluent/48/000000/gmail.png"/></button>
-                <button  mat-menu-item class="w-75 mx-auto bg-purple   text-dark font-20 mt-3"  (click)="sendInvite('outlook')" >Outlook <img class="w-25" src="https://img.icons8.com/color/48/000000/ms-outlook.png"/></button>
-                <button  mat-menu-item class="w-75 mx-auto bg-secondary   text-dark font-20 mt-3"  (click)="sendInvite('defaultMail')" >Default <img  class="w-25" src="https://img.icons8.com/fluent/50/000000/mail.png"/></button>
-              </mat-menu>
+      <mat-card class="p-3 card-style">
+        <div class=" d-block justify-content-between padding-20">
+          <div class="main-color font-bold">My link directo</div>
+          <div>
+            <div>
+              <label class="main-color font-bold">{{domain}}</label><input #inputRoom class="w-75 main-color border-0"
+                type="text" value="{{roomUrl}}">
             </div>
+            <div class="row w-75 mt-4 ml-22">
+              <div class="col-4">
+                <button class="text-white main-background   copy-invite-url"
+                  (click)="copyRoomAddress(inputRoom)">Copiar</button>
+
+              </div>
+              <div class="col-4">
+                <button class="text-white main-background   copy-invite-url"
+                  (click)="saveRoomAddress(inputRoom)">Guardar</button>
+
+              </div>
+              <div class="col-4">
+                <button class="text-white main-background   copy-invite-url"
+                  [matMenuTriggerFor]="inviteMenu">Compartir</button>
+
+                <div class="w-25 mx-5 d-block ">
+
+                  <mat-menu #inviteMenu="matMenu" class="w-p-180  mt-3">
+                    <button mat-menu-item class="w-75 mx-auto bg-info   text-white font-20 text-center"
+                      (click)="openDialogue('sms')">SMS <img class="w-25"
+                        src="https://img.icons8.com/dusk/64/000000/sms.png" /></button>
+                    <button mat-menu-item class="w-75 mx-auto bg-success   text-dark font-20 mt-3 text-center"
+                      [matMenuTriggerFor]="inviteByEmailMenu">Email <img class="w-25"
+                        src="https://img.icons8.com/nolan/64/email-open.png" /></button>
+                  </mat-menu>
+                  <mat-menu #inviteByEmailMenu="matMenu" class="w-p-180">
+                    <button mat-menu-item class="w-75 mx-auto bg-warning   text-white font-20 "
+                      (click)="sendInvite('gmail')">Gmail <img class="w-25"
+                        src="https://img.icons8.com/fluent/48/000000/gmail.png" /></button>
+                    <button mat-menu-item class="w-75 mx-auto bg-purple   text-dark font-20 mt-3"
+                      (click)="sendInvite('outlook')">Outlook <img class="w-25"
+                        src="https://img.icons8.com/color/48/000000/ms-outlook.png" /></button>
+                    <button mat-menu-item class="w-75 mx-auto bg-secondary   text-dark font-20 mt-3"
+                      (click)="sendInvite('defaultMail')">Default <img class="w-25"
+                        src="https://img.icons8.com/fluent/50/000000/mail.png" /></button>
+                  </mat-menu>
+                </div>
+              </div>
+
+
+            </div>
+
           </div>
         </div>
       </mat-card>
@@ -34,35 +69,43 @@
   </div>
   <div class="row">
 
-    <div class="list-patients col-xl-12 col-lg-12">
-      <mat-card class="p-3">
-        <mat-card-title class="p-4 font-18 text-black-50">Last patients seen:</mat-card-title>
-        <div class="container-fluid text-center mt-5  justify-content-center p-20 mat-table-container">         
-          <table mat-table [dataSource]="dataSource" matSort #mytable class="admin-table mat-elevation-z8 w-100">
-                
+    <div class="col-xl-12 col-lg-12 pt-5 pl-6 main-color font-20 font-bold">
+      Últimos Pacientes Atendidos:
+
+    </div>
+  </div>
+  <div class="row">
+
+    <div class="list-patients mt-3 col-xl-12 col-lg-12"> 
+     
+        <div class="w-90 mx-auto">
+          <table mat-table [dataSource]="dataSource" matSort #mytable class="  admin-table mat-elevation-z8 w-100">
+
             <!-- Id Column -->
             <ng-container matColumnDef="dni">
-              <th mat-header-cell *matHeaderCellDef mat-sort-header class="text-center  font-bold font-20"> DNI </th>
-              <td mat-cell *matCellDef="let element"> {{element.patient.dni}} </td>
+              <th mat-header-cell *matHeaderCellDef mat-sort-header class="main-background text-center text-white font-20"> DNI </th>
+              <td mat-cell *matCellDef="let element" class="tbody-background"> {{element.patient.dni}} </td>
             </ng-container>
-        
+
             <!-- Name Column -->
             <ng-container matColumnDef="fullName">
-              <th mat-header-cell *matHeaderCellDef mat-sort-header class="text-center  font-bold font-20"> Full Name </th>
-              <td mat-cell *matCellDef="let element"> {{element.patient.fullName}} </td>
+              <th mat-header-cell *matHeaderCellDef mat-sort-header class="main-background text-center  text-white font-20"> Paciente 
+              </th>
+              <td mat-cell *matCellDef="let element" class="tbody-background"> {{element.patient.fullName}} </td>
             </ng-container>
 
             <!-- createDate Column -->
             <ng-container matColumnDef="payment">
-              <th mat-header-cell *matHeaderCellDef mat-sort-header class="text-center  font-bold font-20"> Method of Payment </th>
-              <td mat-cell *matCellDef="let element"> {{element.payment}} </td>
+              <th mat-header-cell *matHeaderCellDef mat-sort-header class="main-background text-center  text-white font-20"> Metodo de pago  </th>
+              <td mat-cell *matCellDef="let element" class="tbody-background"> {{element.payment}} </td>
             </ng-container>
             <!-- createDate Column -->
             <ng-container matColumnDef="payAmount">
-              <th mat-header-cell *matHeaderCellDef mat-sort-header class="text-center  font-bold font-20"> Amount of Payment </th>
-              <td mat-cell *matCellDef="let element">S/ {{element.payAmount}} </td>
+              <th mat-header-cell *matHeaderCellDef mat-sort-header class="main-background text-center  text-white font-20"> Amount of
+                Payment </th>
+              <td mat-cell *matCellDef="let element" class="tbody-background">S/ {{element.payAmount}} </td>
             </ng-container>
-            
+
             <!-- Action Column -->
             <!-- <ng-container matColumnDef="action">
               <th mat-header-cell *matHeaderCellDef class="text-center  font-bold font-20"> Action </th>
@@ -74,9 +117,11 @@
             </ng-container> -->
             <!-- See Patient`s Chart -->
             <ng-container matColumnDef="detail">
-              <th mat-header-cell *matHeaderCellDef mat-sort-header class="text-center  font-bold font-20"> See Patient`s Chart </th>
-              <td mat-cell *matCellDef="let element"><i class="fa fa-envelope" 
-                (click)="detail({id:element.patient._id, dni:element.patient.dni, fullName:element.patient.fullName})"></i></td>
+              <th mat-header-cell *matHeaderCellDef mat-sort-header class="main-background text-center  text-white font-20"> Historia Clinica </th>
+              <td mat-cell *matCellDef="let element" class="tbody-background" (click)="detail({id:element.patient._id, dni:element.patient.dni, fullName:element.patient.fullName})">
+                <img class="w-12 mr-2" src="assets/images/P20.svg" alt="file1" />
+                <img class="w-12" src="assets/images/P12.svg" alt="file2" />
+              </td>
             </ng-container>
 
             <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
@@ -85,16 +130,14 @@
           <mat-paginator [pageSizeOptions]="[10, 15, 20]" showFirstLastButtons></mat-paginator>
         </div>
         <ng-container *ngIf="noDataToDisplay">
-          <div class="text-center"><h3>There is no available data</h3></div>
+          <div class="text-center">
+            <h3>There is no available data</h3>
+          </div>
         </ng-container>
-        
-      </mat-card>
+
     </div>
 
 
 
   </div>
 </div>
-
-
-

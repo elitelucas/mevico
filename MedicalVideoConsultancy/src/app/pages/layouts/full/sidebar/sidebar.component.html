@@ -1,10 +1,10 @@
 <!-- ============================================================== -->
 <!-- sidebar -->
 <!-- ============================================================== -->
-<div class="background">
+<div class="background pb-5">
   <div>
     <a href="index.html">
-      <img src="./../../../../../assets/images/P3.svg" alt="homepage" class="light-logo">
+      <img style="color:white" src="./../../../../../assets/images/sidebar-logo.svg" alt="homepage" class="light-logo">
     </a>
   </div>
   <div>
@@ -17,7 +17,7 @@
         <ng-container *ngIf="menuitem.icon !== 'av_timer'">
           <img class="super-icon-size" src="{{menuitem.icon}}">
         </ng-container>
-        <span class="ml-3"><b>{{ menuitem.name }}</b></span>
+        <span class="ml-3 font-bold"><b class="item-color">{{ menuitem.name }}</b></span>
         <span fxFlex></span>
         <span class="label label-{{ badge.type }}" *ngFor="let badge of menuitem.badge">{{ badge.value }}</span>
       </a>
@@ -91,7 +91,7 @@
           <button  mat-raised-button
             class="mr-1 text-dark px-1 py-0 " *ngIf="waitingPatientsData && waitingPatientsData.length" (click)="nextAttetion()" style="background-color: white;">
             <img src="./../../../../../assets/images/P15.svg" style="height:32px" alt="start-call" />
-            <span style="color:#047c7f">&nbsp;SIGUIENTE PACIENTE</span></button>
+            <span class="signate-pad" style="color:#047c7f">&nbsp;SIGUIENTE PACIENTE</span></button>
         </div>
 
 
@@ -99,13 +99,12 @@
           <ng-container *ngIf="waitingPatientsData && waitingPatientsData.length">
       
             <ng-container *ngFor="let patient of waitingPatientsData">
-              <div class="d-flex justify-content-between align-items-center">
+              <div>
                 <!--img class="profile-image" [src]="initPatientAvatar(patient)" alt="patient-avatar" />-->
-                <div class="mr-1 d-block mt-1">
-                  <div class="text-white-50">
-                    <p>{{patient.fullName}}-{{patient.dni}}</p>
-                  </div>
-                </div>
+                 
+                    {{patient.fullName}}-{{patient.dni}}
+                  
+                
               </div>
             </ng-container>
           </ng-container>
@@ -114,21 +113,25 @@
     </ng-container>
   </div>
 
-  <div appAccordionLink2 *ngFor="let menuitem of secondMenuItems" routerLinkActive="selected"
-    group="{{menuitem.state}}">
-    <a class="p-2 w-100" appAccordionToggle2 [routerLink]="[ menuitem.state]" routerLinkActive="active-link"
-      [routerLinkActiveOptions]="{exact: true}" *ngIf="menuitem.type === 'link'">
-      <ng-container *ngIf="menuitem.icon === 'av_timer'">
-        <mat-icon>{{ menuitem.icon }}</mat-icon>
-      </ng-container>
-      <ng-container *ngIf="menuitem.icon !== 'av_timer'">
-        <img class="super-icon-size" src="{{menuitem.icon}}">
-      </ng-container>
-      <span class="ml-3">{{ menuitem.name }}</span>
-      <span fxFlex></span>
-      <span class="label label-{{ badge.type }}" *ngFor="let badge of menuitem.badge">{{ badge.value }}</span>
-    </a>
+
+  <div>
+    <div *ngFor="let menuitem of secondMenuItems" group="{{menuitem.state}}">
+
+      <a class="p-2 w-100  sidebar-list" [routerLink]="[ menuitem.state]" *ngIf="menuitem.type === 'link'">
+        <ng-container *ngIf="menuitem.icon === 'av_timer'">
+          <mat-icon>{{ menuitem.icon }}</mat-icon>
+        </ng-container>
+        <ng-container *ngIf="menuitem.icon !== 'av_timer'">
+          <img class="super-icon-size" src="{{menuitem.icon}}">
+        </ng-container>
+        <span class="ml-3 font-bold"><b class="item-color">{{ menuitem.name }}</b></span>
+        <span fxFlex></span>
+        <span class="label label-{{ badge.type }}" *ngFor="let badge of menuitem.badge">{{ badge.value }}</span>
+      </a>
+    </div>
   </div>
+
+
 
 
 </div>

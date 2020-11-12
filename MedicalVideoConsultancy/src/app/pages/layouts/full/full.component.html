@@ -14,7 +14,7 @@
         <!-- ============================================================== -->
         <!-- Sidebar - style you can find in sidebar.scss -->
         <!-- ============================================================== -->
-        <mat-sidenav style="width:287px" #snav2 id="snav2" class="dark-sidebar pl-xs" [mode]="mobileQuery.matches ? 'side' : 'over'" fixedTopGap="0" [opened]="mobileQuery.matches" [disableClose]="mobileQuery.matches"  >
+        <mat-sidenav class="w-p-287" #snav2 id="snav2" class="dark-sidebar pl-xs" [mode]="mobileQuery.matches ? 'side' : 'over'" fixedTopGap="0" [opened]="mobileQuery.matches" [disableClose]="mobileQuery.matches"  >
 
                 <app-sidebar></app-sidebar>
 
@@ -28,7 +28,7 @@
         <!-- Page container - style you can find in pages.scss -->
         <!-- ============================================================== -->
         <mat-sidenav-content class="page-wrapper">
-            <mat-toolbar color="primary" class="topbar telative" >
+            <mat-toolbar class="topbar telative main-background p-r-5" >
                 <!-- ============================================================== -->
                 <!-- Logo - style you can find in header.scss -->
                 <!-- ============================================================== -->
@@ -37,13 +37,13 @@
                 <!-- sidebar toggle -->
                 <!-- ============================================================== -->
         
-                <button mat-icon-button (click)="snav2.toggle()" value="sidebarclosed">
+                <button class="text-white m-r-3" mat-icon-button (click)="snav2.toggle()" value="sidebarclosed">
                     <mat-icon>menu</mat-icon>
                 </button>
                 
-                <div *ngIf="!currentUser.payToDay"> Debe seleccionar un plan de subcripcion </div>
-                <div *ngIf="daysEndSubcriptions != null"> Le quedan {{daysEndSubcriptions}} en su plan </div>
-                <div *ngIf="daysEndFreeUse != null"> Le quedan {{daysEndFreeUse}} de libre uso </div>
+                <div class="text-white opacity-50" *ngIf="!currentUser.payToDay"> Debe seleccionar un plan de subcripcion </div>
+                <div class="text-white opacity-50" *ngIf="daysEndSubcriptions != null"> Le quedan {{daysEndSubcriptions}} en su plan </div>
+                <div class="text-white opacity-50" *ngIf="daysEndFreeUse != null"> Le quedan {{daysEndFreeUse}} de libre uso </div>
                 
                 <span fxFlex></span>
                 <!-- ============================================================== -->

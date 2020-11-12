@@ -8,12 +8,13 @@ import {
 } from '@angular/core';
 import { AuthService } from '../../../_services/auth.service';
 import { MenuItems } from '../../shared/menu-items/menu-items';
-import { SidebarComponent } from '@syncfusion/ej2-angular-navigations';
 
 /** @title Responsive sidenav */
 @Component({
   selector: 'app-full-layout',
-  templateUrl: 'full.component.html'
+  templateUrl: 'full.component.html',
+  styleUrls: ['./full.component.css']
+
 })
 export class FullComponent implements OnInit, OnDestroy, AfterViewInit {
   mobileQuery: MediaQueryList;
@@ -21,7 +22,6 @@ export class FullComponent implements OnInit, OnDestroy, AfterViewInit {
   daysEndSubcriptions: Number;
   daysEndFreeUse: Number;
 
-  @ViewChild('sidebar') sidebar: SidebarComponent;
 
 
   private _mobileQueryListener: () => void;
@@ -62,12 +62,7 @@ export class FullComponent implements OnInit, OnDestroy, AfterViewInit {
   ngOnDestroy(): void {
     this.mobileQuery.removeListener(this._mobileQueryListener);
   }
-  toggleClick() {
-    this.sidebar.toggle();
-}
-closeClick() {
-    this.sidebar.hide();
-}
+
   ngAfterViewInit() { }
 
 }

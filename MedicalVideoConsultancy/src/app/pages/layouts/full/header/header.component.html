@@ -3,10 +3,13 @@
 <!-- ============================================================== -->
 <button [matMenuTriggerFor]="profile" mat-icon-button class="m-r-5">
   <ng-container *ngIf="!currentUser.image">
-    <img src="assets/images/users/1.jpg" alt="user" class="profile-pic">
+    <img src="./../../../../../assets/images/P10.svg" alt="user" class="profile-pic">
   </ng-container>
   <ng-container *ngIf="currentUser.image">
     <img [src]="currentUser.image" alt="user" class="profile-pic">
+  </ng-container>
+  <ng-container>
+    <img src="./../../../../../assets/images/profile-dot.svg" alt="dot" class="profile-pic">
   </ng-container>
 </button>
 <mat-menu #profile="matMenu" class="mymegamenu">

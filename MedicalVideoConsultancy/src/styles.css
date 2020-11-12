@@ -27,13 +27,10 @@ body {
   margin: 0 4px;
   min-width: 94px;
   max-height: 80px;
-  font-size: 20px;
+  font-size: 15px;
   text-align: center;
   line-height: 44px;
   color: #fff;
-  font-weight: 600;
-  background: #6cc;
-  box-shadow: 0 2px 0 #3cb0b0;
   border-radius: 5px;
   border: 0;
   outline: none;
@@ -97,4 +94,74 @@ body {
 .mat-drawer-inner-container {
   overflow-y: auto!important;
   overflow-x: hidden!important;
+}
+.w-p-287{
+  width:287px;
+}
+.main-color{
+  color: #005662;
+}
+.main-background{
+  background-color: #005662!important;
+}
+.alert-background{
+  background-color:#80bdc9;
+}
+.tbody-background{
+  background-color:#00566273;
+}
+.ml-22{
+  margin-left:22%!important;
+}
+.mat-table{    
+  border-radius: 2rem 2rem 0 0;
+  overflow:hidden !important;
+}
+.w-90{
+  width:90%
+}
+.pl-6{
+  padding-left:6%
+}
+
+table {
+  border-collapse: collapse;
+}
+
+th {
+  /* row border */
+  border-bottom: 1px solid #005662;
+}
+
+td.mat-cell {
+  /* row padding */
+  padding: 10px 0;
+  border: 1px solid #005662;
+  text-align:center;
+}
+
+tr.mat-row {
+  /* row border */
+  border: 1px solid #005662;
+}
+.w-12{
+  width:12%
+}
+.ml-80{
+  margin-left:80%;
+}
+.w-14{
+  width:14%
+}
+.w-1-5rem{
+  width:1.5rem;
+}
+.mw-100{
+  max-width: 100%;
+}
+.m-r-3{
+  margin-right:3%!important;
+}
+.p-r-5{
+  padding-right:5%!important;
 }

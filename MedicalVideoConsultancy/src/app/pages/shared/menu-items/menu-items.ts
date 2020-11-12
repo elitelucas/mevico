@@ -28,12 +28,12 @@ export class MenuItems {
   ];
 
   MENUITEMS_USER = [
-    { state: 'health-provider', name: 'Dashboard', type: 'link', icon: 'av_timer' },
-    { state: 'health-provider/edit-room', name: 'Edit Waiting Room', type: 'link', icon: 'https://img.icons8.com/color/48/000000/waiting-room.png' },
-    { state: 'profile', name: 'Profile', type: 'link', icon: 'https://img.icons8.com/doodle/48/000000/user.png' },
-    { state: 'feedbacks', name: 'Feedbacks', type: 'link', icon: 'https://img.icons8.com/color/50/000000/physical-therapy.png' },
-    { state: 'subscription-plan', name: 'Subscription Plan', type: 'link', icon: 'https://img.icons8.com/color/50/000000/physical-therapy.png' },
-    { state: 'patient-charts', name: 'Patient Charts', type: 'link', icon: 'https://img.icons8.com/color/50/000000/physical-therapy.png' }
+    { state: 'health-provider', name: 'Dashboard', type: 'link', icon: './../../../../assets/images/P9.svg' },
+    { state: 'profile', name: 'Profile', type: 'link', icon: './../../../../assets/images/P10.svg' },
+    { state: 'health-provider/edit-room', name: 'Edit Waiting Room', type: 'link', icon: './../../../../assets/images/P11.svg' },
+    { state: 'patient-charts', name: 'Patient Charts', type: 'link', icon: './../../../../assets/images/P12.svg' },
+    { state: 'subscription-plan', name: 'Subscription Plan', type: 'link', icon: './../../../../assets/images/P16.svg' },
+    { state: 'feedbacks', name: 'Feedbacks', type: 'link', icon: './../../../../assets/images/P17.svg' },
   ];
 
   MENUITEMS_FRONT = [

@@ -42,6 +42,29 @@
 .img-height{
   height:38px;
 }
+.signate-pad{
+  padding-left: 10px;
+  padding-right: 10px;
+}
 .patients-queue{
   background-color: #046063;
+  margin-top:20px;
+  margin-right:30px;
+  border-radius: 5px;
+  color:white;
+  width:80%;
 }
+.patients-queue{
+  padding:5%;
+}
+.light-logo{
+  height: fit-content;
+  margin-left: 61px;
+}
+.item-color{
+  color:#005662;
+}
+.font-bold{
+  font-weight:bold;
+}
+

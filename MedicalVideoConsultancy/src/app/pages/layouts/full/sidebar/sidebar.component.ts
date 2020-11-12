@@ -37,8 +37,7 @@ export class AppSidebarComponent implements OnInit, OnDestroy {
   currentUser: any;
   currentUserRole: string = '';
 
-  // waitingPatientsData: Patient[];
-   waitingPatientsData=[];
+  waitingPatientsData: Patient[];
 
   provider_connect = 'OK';
   provider_connect_active = 'active';
@@ -118,11 +117,8 @@ export class AppSidebarComponent implements OnInit, OnDestroy {
       this.confirmConnect();
       this.waitingPatientsData = [];
 
-      this.waitingPatientsData = [
-       {fullName:'aaaaaaaa', dni:'sdfsdfdf'},
-       {fullName:'sssss', dni:'wwwwwwwww'},
-     ]
-      // this.listWaitingPatient();
+     
+      this.listWaitingPatient();
     }
   }
 
